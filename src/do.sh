@@ -12,5 +12,9 @@ cd src
 for wl in ${workloads[@]}; do
     workloadName="$(basename $wl)"
     echo "<<$workloadName>> changed (full path: $wl)"
-    ./generate-kubeconfig.sh $workloadName    
+    ./generate-kubeconfig.sh $workloadName
+    cd "./governance/$workloadName/github"
+    terraform init && terraform apply -auto-approve
+    cd ../../../
+    ls
 done
