@@ -13,8 +13,8 @@ echo "apiServer: $apiServer"
 echo "namespace: $namespace"
 echo "serviceAccount: $serviceAccount"
 echo "secretName: $secretName"
-echo "ca: $ca"
-echo "token: $token"
+#echo "ca: $ca"
+#echo "token: $token"
 
 echo "
 apiVersion: v1
