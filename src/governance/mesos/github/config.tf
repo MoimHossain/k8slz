@@ -44,3 +44,10 @@ resource "github_repository_environment" "production" {
     custom_branch_policies  = false
   }
 }
+
+resource "github_actions_environment_secret" "k8s_token" {
+  repository        = github_repository.moimha.name  
+  environment       = github_repository_environment.production.environment
+  secret_name       = "k8s_token"
+  plaintext_value   = "SAMPLE"
+}
