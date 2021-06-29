@@ -1,5 +1,4 @@
-# Following environment values are set 
-# ARM_CLIENT_ID, ARM_CLIENT_SECRET, ARM_SUBSCRIPTION_ID, ARM_TENANT_ID 
+# Make sure az cli login before this.
 
 terraform {
   backend "azurerm" {
