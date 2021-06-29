@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 workloadName='mesos'
 apiServer=$(kubectl config view -o jsonpath='{.clusters[*].cluster.server}')
 serviceAccount=$(kubectl get serviceaccounts -n $workloadName | grep $workloadName | cut -d' ' -f1)
