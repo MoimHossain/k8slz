@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-workloadName='mesos'
+workloadName=$1  #'mesos'
 apiServer=$(kubectl config view -o jsonpath='{.clusters[*].cluster.server}')
 serviceAccount=$(kubectl get serviceaccounts -n $workloadName | grep $workloadName | cut -d' ' -f1)
 secretName=$(kubectl get secrets -n $workloadName | grep $workloadName | cut -d' ' -f1)
@@ -35,4 +35,4 @@ users:
 - name: ${serviceAccount}
   user:
     token: ${token}
-" > sa.kubeconfig
+" > ./governance/$workloadName/github/kubeconfig

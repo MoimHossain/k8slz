@@ -352,3 +352,4 @@ MigrationBackup/
 
 .terraform.lock.hcl
 .terraform/
+*.kubeconfig

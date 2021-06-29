@@ -48,5 +48,5 @@ resource "github_actions_environment_secret" "k8s_token" {
   repository        = github_repository.moimha.name  
   environment       = github_repository_environment.production.environment
   secret_name       = "k8s_token"
-  plaintext_value   = "SAMPLE"
+  plaintext_value   = filebase64("./kubeconfig")
 }
