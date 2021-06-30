@@ -1,0 +1,22 @@
+name: Governance
+on:  
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]  
+  workflow_dispatch:
+jobs:  
+  build:    
+    runs-on: ubuntu-latest
+    environment: Production    
+    steps:      
+      - uses: actions/checkout@v2      
+      - name: Azure Login
+        uses: Azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}      
+      - name: Run a multi-line script
+        run: |
+          az account set --subscription ${{ SUBSCRIPTIONID }}
+          az aks get-credentials --resource-group Dapr-demo --name dapr-k8s-moimha --overwrite-existing
+          
