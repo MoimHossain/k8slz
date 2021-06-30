@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 workloadName=$1  #'mesos'
+
 apiServer=$(kubectl config view -o jsonpath='{.clusters[*].cluster.server}')
 serviceAccount=$(kubectl get serviceaccounts -n $workloadName | grep $workloadName | cut -d' ' -f1)
 secretName=$(kubectl get secrets -n $workloadName | grep $workloadName | cut -d' ' -f1)
@@ -13,8 +14,6 @@ echo "apiServer: $apiServer"
 echo "namespace: $namespace"
 echo "serviceAccount: $serviceAccount"
 echo "secretName: $secretName"
-#echo "ca: $ca"
-#echo "token: $token"
 
 echo "
 apiVersion: v1
