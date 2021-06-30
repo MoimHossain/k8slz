@@ -18,5 +18,5 @@ terraform {
   }
 }
 
-# Configure the GitHub Provider
+# Configure the GitHub Provider, the GITHUB_TOKEN must present as env:variable
 provider "github" {}
