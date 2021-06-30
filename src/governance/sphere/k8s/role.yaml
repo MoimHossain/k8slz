@@ -1,0 +1,9 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: sphere-service-account-role
+  namespace: sphere
+rules:
+- apiGroups: ["*"]
+  resources: ["*"]
+  verbs: ["*"]

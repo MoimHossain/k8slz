@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: sphere-service-account-rolebinding
+  namespace: sphere
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: sphere-service-account-role
+subjects:
+- namespace: sphere
+  kind: ServiceAccount
+  name: sphere-service-account
