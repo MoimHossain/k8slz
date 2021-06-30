@@ -19,4 +19,5 @@ jobs:
         run: |
           az account set --subscription ${{ secrets.SUBSCRIPTIONID }}
           az aks get-credentials --resource-group Dapr-demo --name dapr-k8s-moimha --overwrite-existing
+          kubectl get nodes # Test command
           
