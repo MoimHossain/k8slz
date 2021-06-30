@@ -6,7 +6,7 @@ resource "github_repository" "moimha" {
   name        = "moimha"
   description = "Kubernetes workload repository"
   visibility  = "public"
-  auto_init   = false
+  auto_init   = true
 }
 
 resource "github_repository_environment" "production" {
