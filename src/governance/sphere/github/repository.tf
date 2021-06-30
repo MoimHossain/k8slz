@@ -6,7 +6,7 @@ resource "github_repository" "sphere" {
   name        = "sphere"
   description = "Kubernetes workload repository"
   visibility  = "public"
-  auto_init   = true
+  auto_init   = false
 }
 
 resource "github_repository_environment" "production" {
