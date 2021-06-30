@@ -1,5 +1,4 @@
 # Make sure az cli login before this.
-
 terraform {
   backend "azurerm" {
     resource_group_name  = "azure-ad-b2x-demo"
