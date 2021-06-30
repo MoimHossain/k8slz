@@ -4,7 +4,7 @@ terraform {
     resource_group_name  = "azure-ad-b2x-demo"
     storage_account_name = "aadb2x"
     container_name       = "k8s-github-governance"
-    key                  = "prod.mesos.tfstate"
+    key                  = "prod.sphere.tfstate"
   }
 }
 
