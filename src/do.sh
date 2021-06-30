@@ -21,5 +21,8 @@ for wl in ${workloads[@]}; do
     ./generate-kubeconfig.sh $workloadName
     cd "./governance/$workloadName/github"
     terraform init && terraform apply -auto-approve
+    rm -rf .terraform
+    rm -rf .terraform.lock.hcl
+    rm -rf kubeconfig
     cd ../../../    
 done
