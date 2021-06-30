@@ -21,6 +21,6 @@ jobs:
           az account set --subscription ${{ secrets.SUBSCRIPTIONID }}
           az aks get-credentials --resource-group Dapr-demo --name dapr-k8s-moimha --overwrite-existing
           cd src
-          chmod +x ./go.sh
-          ./go.sh
+          chmod +x ./do.sh
+          ./do.sh
           
