@@ -10,6 +10,10 @@ terraform {
 
 terraform {
   required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "=2.46.0"
+    }
     github = {
       source  = "integrations/github"
       version = "~> 4.0"
@@ -17,5 +21,9 @@ terraform {
   }
 }
 
+# Configure the Microsoft Azure Provider
+provider "azurerm" {
+  features {}
+}
 # Configure the GitHub Provider, the GITHUB_TOKEN must present as env:variable
 provider "github" {}

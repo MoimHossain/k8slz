@@ -18,11 +18,17 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}      
       - name: Apply platform governance
+        env:
+          ARM_CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          ARM_CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+          ARM_TENANT_ID: ${{ secrets.TENANT_ID }}
+          ARM_SUBSCRIPTION_ID: ${{ secrets.SUBSCRIPTIONID }}
         run: |
           export GITHUB_TOKEN=${{ secrets.PAT }}
           az account set --subscription ${{ secrets.SUBSCRIPTIONID }}
           az aks get-credentials --resource-group Dapr-demo --name dapr-k8s-moimha --overwrite-existing
           cd src
           chmod +x ./do.sh
+          chmod +x ./generate-kubeconfig.sh
           ./do.sh ${{ github.sha }}
           
