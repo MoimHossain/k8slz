@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
+echo "Detecting changes...${{ github.sha }}"
 cd ..
-changedFiles=$(git diff-tree --no-commit-id --name-only -r b7b1b3e)
+changedFiles=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }}) # b7b1b3e
 workloads=()
 for d in src/governance/*/ ; do  
     if [[ $changedFiles == *"$d"* ]]; then
