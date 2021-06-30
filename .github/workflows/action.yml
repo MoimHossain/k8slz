@@ -15,9 +15,12 @@ jobs:
         uses: Azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}      
-      - name: Run a multi-line script
+      - name: Apply platform governance
         run: |
+          export GITHUB_TOKEN=${{ secrets.PAT }}
           az account set --subscription ${{ secrets.SUBSCRIPTIONID }}
           az aks get-credentials --resource-group Dapr-demo --name dapr-k8s-moimha --overwrite-existing
-          ls
+          cd src
+          chmod +x ./go.sh
+          ./go.sh
           
