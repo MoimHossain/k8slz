@@ -1,7 +1,6 @@
 data "github_user" "current" {
   username = "moimhossain"
 }
-
 resource "github_repository" "sphere" {
   name        = "sphere"
   description = "Kubernetes workload repository"
