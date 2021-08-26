@@ -3,7 +3,7 @@ data "github_user" "current" {
 }
 
 resource "github_repository" "moimha" {
-  name        = "moimha"
+  name        = "mesos-xx"
   description = "Kubernetes workload repository"
   visibility  = "public"
   auto_init   = true
